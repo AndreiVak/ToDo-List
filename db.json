@@ -1,0 +1,23 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "login": "Andrey",
+      "password": "w123ewew",
+      "email": "andrey@mail.ru",
+      "categories": [
+        {
+          "id": 1123123123,
+          "categoryName": "Front-End",
+          "tasks": [
+            {
+              "taskTitle": "Изучить React",
+              "id": "123123123123",
+              "isComplete": false
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
