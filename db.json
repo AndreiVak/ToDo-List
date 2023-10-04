@@ -18,6 +18,32 @@
           ]
         }
       ]
+    },
+    {
+      "email": "Ironman@mail.ru",
+      "password": "$2a$10$dXcHYVfE2jW2NUFEOFhSSuEYXKi6rNx29sySVXXnSBG4J5AYlgf3u",
+      "login": "Ironman",
+      "categories": [
+        {
+          "categoryName": "Frontend",
+          "id": "be0b3baa-2074-469f-b294-f46171ec075f",
+          "color": "green",
+          "tasks": []
+        },
+        {
+          "categoryName": "Backend",
+          "id": "4bdc113c-93dc-4c9a-9529-47de762321c5",
+          "color": "blue",
+          "tasks": []
+        },
+        {
+          "categoryName": "Fullstack",
+          "id": "966a0dd6-d1f6-4ffd-ba32-e37d599e59b6",
+          "color": "purple",
+          "tasks": []
+        }
+      ],
+      "id": 2
     }
   ]
 }

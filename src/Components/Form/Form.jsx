@@ -1,15 +1,17 @@
-import React from 'react';
-import {Link, useNavigate, useLocation} from "react-router-dom";
+import React, {useContext} from 'react';
+import {Link, useNavigate, useLocation, Navigate} from "react-router-dom";
 import {useForm} from "react-hook-form";
 import axios from "axios";
 import './form.scss'
+import {CustomContext} from "../../utils/Context";
 
 const Form = () => {
-
 
     const navigate = useNavigate()
 
     const location = useLocation()
+
+    const {user , setUser} = useContext(CustomContext)
 
     const {
         register,
@@ -25,6 +27,14 @@ const Form = () => {
             ...data,
             categories: []
         }).then((res) => {
+            setUser({
+                token : res.data.accessToken,
+                ...res.data.user
+            })
+            localStorage.setItem('user', JSON.stringify({
+                token : res.data.accessToken,
+                ...res.data.user
+            }))
             reset()
             navigate('/')
         })
@@ -35,6 +45,14 @@ const Form = () => {
         axios.post('http://localhost:8080/login ', {
             ...data
         }).then((res) => {
+            setUser({
+                token : res.data.accessToken,
+                ...res.data.user
+            })
+            localStorage.setItem('user', JSON.stringify({
+                token : res.data.accessToken,
+                ...res.data.user
+            }))
             reset()
             navigate('/')
         })
@@ -43,6 +61,10 @@ const Form = () => {
 
     const onSubmit = (data) => {
         location.pathname === '/register' ? registerUser(data) : loginUser(data)
+    }
+
+    if (user.email.length !== 0){
+        return <Navigate to='/'/>
     }
 
     return (

@@ -1,10 +1,24 @@
-import {Route, Routes} from 'react-router-dom'
+import {Navigate, Route, Routes} from 'react-router-dom'
 import Home from "./pages/Home/Home";
 import Register from "./pages/Register/Register";
 import Login from "./pages/Login/Login";
 import './style.scss'
+import {useContext, useEffect} from "react";
+import {CustomContext} from "./utils/Context";
+
 
 function App() {
+
+    const {user , setUser} = useContext(CustomContext)
+
+    useEffect(() => {
+        if (localStorage.getItem('user') !== null) {
+            setUser(JSON.parse(localStorage.getItem('user')))
+        }
+    },[])
+
+
+
   return (
     <>
       <Routes>

@@ -1,0 +1,104 @@
+.aside{
+  width: 200px;
+  height: 100vh;
+  padding: 52px 20px 0;
+  background: lightblue;
+  &__all{
+    display: flex;
+    column-gap: 5px;
+    align-items: center;
+    padding: 12px 9px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 30px;
+    &:hover{
+      background: white;
+    }
+  }
+  &__menu{
+    display: flex;
+    flex-direction: column;
+  }
+  &__item{
+    display: flex;
+    column-gap: 5px;
+    align-items: center;
+    padding: 12px 9px;
+    border-radius: 5px;
+    cursor: pointer;
+    &:hover{
+      background: white;
+    }
+  }
+  &__color{
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+  }
+  &__text{
+    font-family: "Arial", sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 15px;
+  }
+  &__create{
+    display: flex;
+    column-gap: 5px;
+    align-items: center;
+    padding: 12px 9px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 30px;
+    position: relative;
+    &:hover{
+      background: white;
+    }
+  }
+  &__popup{
+    position: absolute;
+    top: 100%;
+    width: 235px;
+    padding: 18px;
+    background: #ecfafa;
+    box-shadow: 0 6px 10px rgba(0,0,0,0.05);
+    border-radius: 10px;
+    &-close{
+      cursor: pointer;
+      position: absolute;
+      top: 0;
+      right: 0;
+      transform: translate(50%,-50%);
+    }
+  }
+  &__field{
+    border: 1px solid #efefef;
+    border-radius: 4px;
+    height: 32px;
+    width: 100%;
+    padding: 0 11px;
+  }
+  &__colors{
+    margin: 13px 0;
+    display: flex;
+    column-gap: 5px;
+  }
+  &__col{
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  &__add{
+    width: 100%;
+    background: #4dd599;
+    border-radius: 4px;
+    padding: 10px 0;
+    font-family: "Arial", sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 15px;
+    color: #ecfafa;
+    border: none;
+    cursor: pointer;
+  }
+}

@@ -1,5 +1,6 @@
 import {createContext, useState} from "react";
 
+
 export const CustomContext = createContext()
 
 export const Context = (props) => {
@@ -8,8 +9,10 @@ export const Context = (props) => {
         email: ''
     })
 
+
     const value = {
-        user
+        user,
+        setUser
     }
 
     return  <CustomContext.Provider value={value}>
