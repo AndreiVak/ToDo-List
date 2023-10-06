@@ -9,7 +9,6 @@ export const Context = (props) => {
         email: ''
     })
 
-
     const value = {
         user,
         setUser

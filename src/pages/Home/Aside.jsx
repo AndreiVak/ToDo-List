@@ -1,11 +1,14 @@
 import React, {useContext, useState} from 'react';
 import {HiMenuAlt1} from 'react-icons/hi'
-import {AiOutlinePlus, AiFillCloseCircle} from 'react-icons/ai'
+import {AiOutlinePlus, AiFillCloseCircle, AiOutlineClose} from 'react-icons/ai'
 import './aside.scss'
 import {dataColors} from "../../utils/dataColors";
 import { v4 as uuidv4 } from 'uuid';
 import axios from "axios";
 import {CustomContext} from "../../utils/Context";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 const Aside = () => {
 
@@ -22,6 +25,7 @@ const Aside = () => {
             color,
             tasks:[]
         }
+
         axios.patch(`http://localhost:8080/users/${user.id}`, {categories: [...user.categories, newCategory]})
             .then(({data}) => {
               setUser({
@@ -34,13 +38,46 @@ const Aside = () => {
                 }))
               setActive(false)
               setCategory('')
+              toast("Категория добавлена!")
             })
-            .catch((err) => console.log(err))
+            .catch((err) => toast(`Категория не добавлена! ${err.message}`))
     }
 
+    const logOutUser = () => {
+        localStorage.removeItem('user')
+        setUser({
+            email: ''
+        })
+    }
+
+    const checkNameCategories = () => {
+        if (user.categories.findIndex((item) => item.categoryName === category) > -1) {
+            toast('Такая категория уже существует!')
+        } else {
+            addCategory()
+        }
+    }
+
+    const delCategory= (id) => {
+        let newArrayCategories = user.categories.filter((item) => item.id !== id)
+        axios.patch(`http://localhost:8080/users/${user.id}`, {categories: newArrayCategories})
+            .then(({data}) => {
+                setUser({
+                    ...data,
+                    token: user.token
+                })
+                localStorage.setItem('user', JSON.stringify({
+                    ...data,
+                    token: user.token
+                }))
+                toast("Категория удалена!")
+            }).catch((err) => toast(`Категория не удалена! ${err.message}`))
+    }
 
     return (
             <aside className="aside">
+                <button className="aside__leave" onClick={logOutUser}>Выйти</button>
+
                 <div className="aside__all">
                     <span><HiMenuAlt1/></span>
                     <span className="aside__text">Все задачи</span>
@@ -52,6 +89,9 @@ const Aside = () => {
                             <li key={item.id} className="aside__item">
                                 <span style={{background: item.color}} className="aside__color"></span>
                                 <span className="aside__text">{item.categoryName}</span>
+                                <span onClick={() => delCategory(item.id)} className="aside__item-del">
+                                    <AiOutlineClose className='aside__item-del-icon'/>
+                                </span>
                             </li>
                         ))
                     }
@@ -69,7 +109,7 @@ const Aside = () => {
                                 <span onClick={() => setColor(item)} className="aside__col" key={item} style={{background : item, border: color === item ? '3px solid black' : 'none'}}/>
                             ))}
                         </div>
-                        <button type="button" className="aside__add" onClick={addCategory}>Добавить</button>
+                        <button type="button" className="aside__add" onClick={checkNameCategories}>Добавить</button>
                         <span className="aside__popup-close" onClick={() => setActive(false)}><AiFillCloseCircle/></span>
                     </div>
                 </div>
