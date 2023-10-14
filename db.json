@@ -34,7 +34,13 @@
           "categoryName": "Backend",
           "id": "4bdc113c-93dc-4c9a-9529-47de762321c5",
           "color": "blue",
-          "tasks": []
+          "tasks": [
+            {
+              "taskTitle": "Изучить Python",
+              "id": "21323123213",
+              "isComplete": false
+            }
+          ]
         },
         {
           "categoryName": "Fullstack",

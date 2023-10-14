@@ -3,13 +3,12 @@ import {CustomContext} from "../../utils/Context";
 import {Navigate} from 'react-router-dom'
 import Aside from "./Aside";
 import {ToastContainer} from "react-toastify";
-
+import HomeContent from "./HomeContent";
+import './home.scss'
 
 
 const Home = () => {
-
     const {user} = useContext(CustomContext)
-
     if (user.email.length === 0){
         return <Navigate to='/login'/>
     }
@@ -17,7 +16,9 @@ const Home = () => {
     return (
         <section className="home">
             <Aside/>
-            <div className="content"></div>
+
+            <HomeContent/>
+
             <ToastContainer/>
         </section>
     );

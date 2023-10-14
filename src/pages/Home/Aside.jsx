@@ -16,7 +16,7 @@ const Aside = () => {
     const [color, setColor] = useState(dataColors[0])
     const [category, setCategory] = useState('')
 
-    const {user, setUser} = useContext(CustomContext)
+    const {user, setUser, status, setStatus} = useContext(CustomContext)
 
     const addCategory = () => {
         let newCategory = {
@@ -78,7 +78,7 @@ const Aside = () => {
             <aside className="aside">
                 <button className="aside__leave" onClick={logOutUser}>Выйти</button>
 
-                <div className="aside__all">
+                <div className={`aside__all ${status === 'all' ? 'active' : ''}`} onClick={() => setStatus('all')}>
                     <span><HiMenuAlt1/></span>
                     <span className="aside__text">Все задачи</span>
                 </div>
@@ -86,7 +86,7 @@ const Aside = () => {
                 <ul className="aside__menu">
                     {
                         user.categories.map((item) => (
-                            <li key={item.id} className="aside__item">
+                            <li key={item.id} className={`aside__item ${status === item.categoryName ? 'active' : ''}`} onClick={() => setStatus(item.categoryName)}>
                                 <span style={{background: item.color}} className="aside__color"></span>
                                 <span className="aside__text">{item.categoryName}</span>
                                 <span onClick={() => delCategory(item.id)} className="aside__item-del">

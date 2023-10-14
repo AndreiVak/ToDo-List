@@ -20,6 +20,9 @@
     &:hover{
       background: white;
     }
+    &.active{
+      background: #ffffff;
+    }
   }
   &__menu{
     display: flex;
@@ -27,7 +30,7 @@
   }
   &__item{
     display: flex;
-    column-gap: 5px;
+    column-gap: 10px;
     align-items: center;
     padding: 12px 9px;
     border-radius: 5px;
@@ -45,6 +48,9 @@
           transition: .1s;
         }
       }
+    }
+    &.active{
+      background: #ffffff;
     }
     &:hover{
       background: white;
