@@ -1,3 +1,71 @@
 .content{
   width: calc(100% - 200px);
+  padding: 56px 69px 0 56px;
+  &__circle{
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 2px solid #e8e8e8;
+    position: relative;
+    cursor: pointer;
+    &:hover, &.active{
+      background: #4dd599;
+      border: 2px solid #4dd599;
+      &:before{
+        content: url("../../assets/images/done.svg");
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+  }
+  &__top{
+    display: flex;
+    align-items: center;
+    column-gap: 15px;
+    margin-bottom: 52px;
+  }
+  &__title{
+    font-family: "Arial", sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 39px;
+    color: #64c4ed;
+  }
+  &__edit{
+    cursor: pointer;
+    transition: 0.1s;
+    &:hover{
+      color: #e80404;
+    }
+  }
+  &__menu{
+    display: flex;
+    flex-direction: column;
+    row-gap: 21px;
+  }
+  &__item{
+    display: flex;
+    column-gap: 15px;
+    align-items: center;
+  }
+  &__bottom{
+    display: flex;
+    column-gap: 20px;
+    align-items: center;
+    margin-top: 21px;
+    &-icon{
+      cursor: pointer;
+    }
+    &-text{
+      font-family: 'Lato', sans-serif;
+      font-style: normal;
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 19px;
+      color: #b4b4b4;
+    }
+  }
 }
