@@ -68,4 +68,46 @@
       color: #b4b4b4;
     }
   }
+  &__add{
+    display: flex;
+    flex-direction: column;
+    padding-top: 30px;
+    row-gap: 16px;
+    &-field{
+      max-width: 415px;
+      height: 38px;
+      background: white;
+      border: 1px solid #efefef;
+      border-radius: 4px;
+      padding: 0 14px;
+    }
+    &-action{
+      display: flex;
+      column-gap: 20px;
+    }
+    &-btn{
+      font-family: 'Lato', sans-serif;
+      font-style: normal;
+      font-size: 14px;
+      font-weight: 600;
+      padding: 10px 20px;
+      background: #4dd599;
+      border-radius: 5px;
+      border: none;
+      cursor: pointer;
+      color: white;
+    }
+    &-close{
+      font-family: 'Lato', sans-serif;
+      font-style: normal;
+      font-size: 14px;
+      font-weight: 600;
+      padding: 10px 20px;
+      background: #e8e8e8;
+      border-radius: 5px;
+      border: none;
+      cursor: pointer;
+      color: #9c9c9c;
+    }
+  }
 }

@@ -89,7 +89,10 @@ const Aside = () => {
                             <li key={item.id} className={`aside__item ${status === item.categoryName ? 'active' : ''}`} onClick={() => setStatus(item.categoryName)}>
                                 <span style={{background: item.color}} className="aside__color"></span>
                                 <span className="aside__text">{item.categoryName}</span>
-                                <span onClick={() => delCategory(item.id)} className="aside__item-del">
+                                <span onClick={(e) => {
+                                    e.stopPropagation()
+                                    delCategory(item.id)
+                                }} className="aside__item-del">
                                     <AiOutlineClose className='aside__item-del-icon'/>
                                 </span>
                             </li>
