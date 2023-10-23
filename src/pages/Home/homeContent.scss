@@ -47,9 +47,30 @@
     row-gap: 21px;
   }
   &__item{
+    max-width: 415px;
     display: flex;
     column-gap: 15px;
     align-items: center;
+    position: relative;
+    &-del{
+      display: none;
+      position: absolute;
+      top: 50%;
+      right: 0;
+      transform: translateY(-50%);
+      cursor: pointer;
+      color: #d5d4d4;
+      &:hover{
+        color: #000000;
+        transition: 0.1ms;
+      }
+    }
+    &:hover{
+      .content__item-del{
+        display: block;
+      }
+    }
+
   }
   &__bottom{
     display: flex;

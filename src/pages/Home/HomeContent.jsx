@@ -13,8 +13,8 @@ const HomeContent = () => {
 
             {
                 status === 'all' ? user.categories.map((item) => (
-                    <ContentCategory key={item.id} status={item.categoryName}/>
-                )) : <ContentCategory status={status}/>
+                    <ContentCategory key={item.id} statusContent={item.categoryName}/>
+                )) : <ContentCategory statusContent={status}/>
             }
 
 
