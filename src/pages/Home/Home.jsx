@@ -1,9 +1,9 @@
 import React, {useContext} from 'react';
 import {CustomContext} from "../../utils/Context";
 import {Navigate} from 'react-router-dom'
-import Aside from "./Aside";
+import Aside from "./Aside/Aside";
 import {ToastContainer} from "react-toastify";
-import HomeContent from "./HomeContent";
+import HomeContent from "./HomeContent/HomeContent";
 import './home.scss'
 
 
@@ -16,9 +16,7 @@ const Home = () => {
     return (
         <section className="home">
             <Aside/>
-
             <HomeContent/>
-
             <ToastContainer/>
         </section>
     );

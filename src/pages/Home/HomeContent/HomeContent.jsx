@@ -1,7 +1,7 @@
 import React, {useContext} from 'react';
-import {CustomContext} from "../../utils/Context";
+import {CustomContext} from "../../../utils/Context";
 import './homeContent.scss'
-import ContentCategory from "../../Components/ContentCategory/ContentCategory";
+import ContentCategory from "../../../Components/ContentCategory/ContentCategory";
 
 
 const HomeContent = () => {

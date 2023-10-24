@@ -7,57 +7,18 @@ import {CustomContext} from "../../utils/Context";
 
 const Form = () => {
 
-    const navigate = useNavigate()
-
     const location = useLocation()
 
-    const {user , setUser} = useContext(CustomContext)
+    const {user, registerUser, loginUser} = useContext(CustomContext)
 
     const {
         register,
-        reset,
         handleSubmit,
         formState: {
             errors
         }
     } = useForm({mode: "onBlur"})
 
-    const registerUser = (data) => {
-        axios.post('http://localhost:8080/register ', {
-            ...data,
-            categories: []
-        }).then((res) => {
-            setUser({
-                token : res.data.accessToken,
-                ...res.data.user
-            })
-            localStorage.setItem('user', JSON.stringify({
-                token : res.data.accessToken,
-                ...res.data.user
-            }))
-            reset()
-            navigate('/')
-        })
-            .catch((err) => console.log(err))
-    }
-
-    const loginUser = (data) => {
-        axios.post('http://localhost:8080/login ', {
-            ...data
-        }).then((res) => {
-            setUser({
-                token : res.data.accessToken,
-                ...res.data.user
-            })
-            localStorage.setItem('user', JSON.stringify({
-                token : res.data.accessToken,
-                ...res.data.user
-            }))
-            reset()
-            navigate('/')
-        })
-            .catch((err) => console.log(err))
-    }
 
     const onSubmit = (data) => {
         location.pathname === '/register' ? registerUser(data) : loginUser(data)
