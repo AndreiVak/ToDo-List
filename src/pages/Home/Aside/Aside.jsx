@@ -9,21 +9,14 @@ import AsideCreateCategory from "./AsideCreateCategory/AsideCreateCategory";
 
 const Aside = () => {
 
-    const {setUser} = useContext(CustomContext)
-
-    const logOutUser = () => {
-        localStorage.removeItem('user')
-        setUser({
-            email: ''
-        })
-    }
+    const {logOutUser} = useContext(CustomContext)
 
     return (
             <aside className="aside">
-                <button className="aside__leave" onClick={logOutUser}>Выйти</button>
                 <AsideAll/>
                 <AsideMenu/>
                 <AsideCreateCategory/>
+                <button className="aside__leave" onClick={logOutUser}>Выйти</button>
             </aside>
     );
 };

@@ -1,8 +1,8 @@
 import React from 'react';
 
-const ContentCheckBox = ({isComplete, handleCompleteTask, id}) => {
+const ContentCheckBox = ({isComplete, handleCompleteTask, id, statusContent}) => {
     return (
-        <div className={`content__circle ${isComplete ? 'active' : ""}`} onClick={() => handleCompleteTask(id)}/>
+        <div className={`content__circle ${isComplete ? 'active' : ""}`} onClick={() => handleCompleteTask(id, statusContent)}/>
     );
 };
 

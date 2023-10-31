@@ -28,21 +28,22 @@
           "categoryName": "Frontend",
           "id": "be0b3baa-2074-469f-b294-f46171ec075f",
           "color": "green",
-          "tasks": []
+          "tasks": [
+            {
+              "taskTitle": "Изучить TypeScript",
+              "id": "c38e1159-6bd3-4679-b155-0f83177ce334",
+              "isComplete": false
+            }
+          ]
         },
         {
-          "categoryName": "Backend12",
+          "categoryName": "Backend",
           "id": "4bdc113c-93dc-4c9a-9529-47de762321c5",
           "color": "blue",
           "tasks": [
             {
               "taskTitle": "Изучить Python",
               "id": "21323123213",
-              "isComplete": false
-            },
-            {
-              "taskTitle": "Изучить PhP",
-              "id": "17c58a28-78db-48ea-9e95-c1420a1e61c3",
               "isComplete": false
             }
           ]
@@ -51,7 +52,13 @@
           "categoryName": "Fullstack",
           "id": "966a0dd6-d1f6-4ffd-ba32-e37d599e59b6",
           "color": "purple",
-          "tasks": []
+          "tasks": [
+            {
+              "taskTitle": "Изучить Go!",
+              "id": "ce4c109b-5c3f-4ed7-8ea2-d93752c21b01",
+              "isComplete": false
+            }
+          ]
         }
       ],
       "id": 2

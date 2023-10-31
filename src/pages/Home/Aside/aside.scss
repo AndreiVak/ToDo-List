@@ -2,12 +2,22 @@
   width: 200px;
   height: 100vh;
   padding: 52px 20px 0;
-  background: lightblue;
+  background: #bdd1c5;
   position: relative;
   &__leave{
     position: absolute;
-    top: 20px;
-    left: 20px;
+    width: 100%;
+    height: 40px;
+    bottom: 0;
+    left: 0;
+    border: none;
+    color: #ffffff;
+    background: #5f8671;
+    font-family: "Arial", sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 15px;
+    cursor: pointer;
   }
   &__all{
     display: flex;
@@ -21,7 +31,7 @@
       background: white;
     }
     &.active{
-      background: #ffffff;
+      background: #9eaba2;
     }
   }
   &__menu{
